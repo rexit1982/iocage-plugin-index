@@ -1,22 +1,24 @@
 {
-    "name": "sabnzbd",
+    "name": "emby-server-stable",
     "release": "11.3-RELEASE",
-    "artifact": "https://github.com/ConorBeh/iocage-plugin-sabnzbd.git",
+    "artifact": "https://github.com/freenas/iocage-plugin-emby.git",
     "properties": {
-        "nat": 1,
-        "nat_forwards": "tcp(8080:8090)"
+        "dhcp": 1,
+        "allow_raw_sockets": "1"
     },
     "pkgs": [
-        "sabnzbdplus"
+        "emby-server",
+        "ffmpeg"
     ],
     "packagesite": "http://pkg.FreeBSD.org/FreeBSD:11:amd64/latest",
     "fingerprints": {
-        "plugin-default": [
+        "iocage-plugins": [
             {
                 "function": "sha256",
                 "fingerprint": "b0170035af3acc5f3f3ae1859dc717101b4e6c1d0a794ad554928ca0cbb2f438"
             }
         ]
     },
-    "revision": "0"
+    "revision": "0",
+    "official": false
 }
